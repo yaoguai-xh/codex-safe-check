@@ -53,6 +53,9 @@ bash collect-diagnostics.sh
 报告的人工诊断、按顺序执行的修复步骤和一次补充判断。付费服务链接会在商品正式
 发布后补充；在此之前，本仓库不通过私信收款，也不接收凭据。
 
+上架通知 / 购买意向公开 issue：
+https://github.com/yaoguai-xh/codex-safe-check/issues/2
+
 ## English
 
 Codex Safe Check is a read-only environment collector for Codex CLI installation
