@@ -1,0 +1,36 @@
+name: Security boundary report
+description: Report a case where the collector might expose information it should not expose
+title: "[Security boundary]: "
+labels: ["security-boundary"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not paste the exposed value. Describe only the field type and where it appeared. If a real credential was exposed anywhere, rotate it before continuing.
+  - type: dropdown
+    id: field_type
+    attributes:
+      label: Field type
+      options:
+        - Secret value
+        - Auth file content
+        - Full config content
+        - Source code or log content
+        - Username, hostname, working directory, or proxy address
+        - Other private data
+    validations:
+      required: true
+  - type: textarea
+    id: location
+    attributes:
+      label: Where it appeared
+      description: Name the report section or script output line without including the private value.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: I did not include the private value in this issue.
+          required: true

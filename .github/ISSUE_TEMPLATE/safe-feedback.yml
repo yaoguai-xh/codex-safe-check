@@ -1,0 +1,35 @@
+name: Safe feedback
+description: Documentation or collector feedback without private diagnostic data
+title: "[Feedback]: "
+labels: ["feedback"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not paste passwords, one-time codes, API keys, access tokens, auth files, full logs, source code, full configuration files, usernames, hostnames, working directories, proxy addresses, identity documents, or screenshots containing account details.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Describe the documentation or collector behavior without private data.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - README or docs
+        - Windows PowerShell collector
+        - macOS/Linux/WSL collector
+        - Release ZIP
+        - Other
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I removed secrets, account details, private paths, hostnames, logs, source code, and full configuration.
+          required: true
