@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Codex Safe Check</title>
-    <meta name="description" content="A read-only Codex CLI diagnostic collector for install, login, proxy, custom CA, CODEX_HOME, and connectivity problems.">
+    <title>Codex Safe Check 中文说明</title>
+    <meta name="description" content="Codex CLI 安装、登录、代理、自定义 CA、CODEX_HOME 与网络连通性问题的只读诊断采集器。">
     <style>
       :root {
         color-scheme: light;
@@ -24,14 +24,21 @@
 
       body {
         margin: 0;
-        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
         color: var(--ink);
         background: var(--paper);
-        line-height: 1.55;
+        line-height: 1.65;
       }
 
       a {
         color: var(--accent);
+      }
+
+      .language {
+        position: absolute;
+        top: 18px;
+        right: 24px;
+        font-size: 14px;
       }
 
       .hero {
@@ -50,13 +57,12 @@
         color: var(--accent-2);
         font-size: 14px;
         font-weight: 700;
-        text-transform: uppercase;
       }
 
       h1 {
         margin: 0;
-        font-size: clamp(42px, 7vw, 84px);
-        line-height: 0.95;
+        font-size: clamp(40px, 7vw, 78px);
+        line-height: 1;
         letter-spacing: 0;
       }
 
@@ -144,11 +150,6 @@
         margin: 0 0 12px;
       }
 
-      ul {
-        margin: 0;
-        padding-left: 20px;
-      }
-
       code {
         border-radius: 4px;
         padding: 2px 5px;
@@ -167,18 +168,11 @@
         font-size: 14px;
       }
 
-      .language {
-        position: absolute;
-        top: 18px;
-        right: 24px;
-        font-size: 14px;
-      }
-
       @media (max-width: 780px) {
         .hero {
           grid-template-columns: 1fr;
           min-height: auto;
-          padding-top: 34px;
+          padding-top: 42px;
         }
 
         .grid {
@@ -189,40 +183,40 @@
   </head>
   <body>
     <nav class="language" aria-label="Language">
-      <a href="zh.html">简体中文</a>
+      <a href="./">English</a>
     </nav>
     <main>
       <section class="hero">
         <div>
-          <p class="eyebrow">MIT-licensed read-only diagnostic collector</p>
+          <p class="eyebrow">MIT License，只读诊断采集器</p>
           <h1>Codex Safe Check</h1>
-          <p class="lead">A small collector for Codex CLI install, login, proxy, custom CA, <code>CODEX_HOME</code>, and connectivity problems. It reports versions and presence signals without reading secrets, auth files, source code, logs, usernames, hostnames, working directories, or proxy addresses.</p>
+          <p class="lead">用于排查 Codex CLI 安装、登录、代理、自定义 CA、<code>CODEX_HOME</code> 和基础连通性问题。只记录版本和“是否存在”信号，不读取密钥、认证文件、源码、日志、用户名、主机名、工作目录或代理地址。</p>
           <div class="actions">
-            <a class="button" href="https://github.com/yaoguai-xh/codex-safe-check/releases/tag/v1.0.1">Download v1.0.1</a>
-            <a class="button secondary" href="https://github.com/yaoguai-xh/codex-safe-check">View source</a>
-            <a class="button secondary" href="paid-diagnosis.html">Diagnosis flow</a>
+            <a class="button" href="https://github.com/yaoguai-xh/codex-safe-check/releases/tag/v1.0.1">下载 v1.0.1</a>
+            <a class="button secondary" href="https://github.com/yaoguai-xh/codex-safe-check">查看源码</a>
+            <a class="button secondary" href="paid-diagnosis.html">诊断服务流程</a>
           </div>
         </div>
         <div class="visual" aria-label="Codex diagnostic service cover">
-          <img src="assets/codex-diagnostic-cover.png" alt="Codex environment diagnostic cover">
+          <img src="assets/codex-diagnostic-cover.png" alt="Codex 环境诊断封面">
         </div>
       </section>
 
       <section class="band">
         <div class="wrap">
-          <h2>Use It When</h2>
+          <h2>适合这些情况</h2>
           <div class="grid">
             <article class="card">
-              <h3>Install</h3>
-              <p><code>codex</code> is not found, the CLI version is unexpected, or PATH and install location are unclear.</p>
+              <h3>安装问题</h3>
+              <p><code>codex</code> 命令不存在、版本异常，或者 PATH 和安装目录不清楚。</p>
             </article>
             <article class="card">
-              <h3>Login</h3>
-              <p>Browser login does not return to the CLI, or a remote, WSL2, SSH, or headless environment needs a safer first check.</p>
+              <h3>登录问题</h3>
+              <p>浏览器登录回不到 CLI，或远程机器、WSL2、SSH、无头环境需要先做安全检查。</p>
             </article>
             <article class="card">
-              <h3>Network</h3>
-              <p>Proxy, custom CA, TLS interception, sandboxed networking, or official endpoint reachability may be involved.</p>
+              <h3>网络问题</h3>
+              <p>可能涉及代理、自定义 CA、TLS 拦截、网络沙箱或官方端点可达性。</p>
             </article>
           </div>
         </div>
@@ -230,23 +224,23 @@
 
       <section class="band">
         <div class="wrap">
-          <h2>Boundary</h2>
+          <h2>隐私边界</h2>
           <div class="warning">
-            Do not paste passwords, one-time codes, API keys, access tokens, <code>auth.json</code>, full logs, source code, full config files, identity documents, or screenshots containing account details into public issues.
+            不要在公开 issue 中粘贴密码、验证码、API Key、访问令牌、<code>auth.json</code>、完整日志、源码、完整配置、身份证件、账号截图、用户名、主机名、工作目录或代理地址。
           </div>
         </div>
       </section>
 
       <section class="band">
         <div class="wrap">
-          <h2>Paid Diagnosis</h2>
-          <p>The collector is free. The paid offer is a written diagnosis from a manually reviewed, redacted report, with prioritized fix steps and one follow-up. The payment link will be added after the creator/payment account is published. Until then, do not send diagnostic reports through GitHub issues.</p>
-          <p><a href="paid-diagnosis.html">Read the diagnosis workflow and privacy boundary</a>.</p>
+          <h2>付费诊断</h2>
+          <p>采集器永久免费。付费内容是一份基于脱敏报告的人工诊断、按优先级排列的修复步骤和一次补充判断。支付链接会在创作者/收款页面发布后补充。上线前不要通过 GitHub issue 发送诊断报告。</p>
+          <p><a href="paid-diagnosis.html">查看诊断服务流程和隐私边界</a>。</p>
         </div>
       </section>
     </main>
     <footer class="wrap">
-      <p>Codex Safe Check is independent open-source tooling and is not an OpenAI product.</p>
+      <p>Codex Safe Check 是独立开源工具，不是 OpenAI 官方产品。</p>
     </footer>
   </body>
 </html>
