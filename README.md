@@ -9,6 +9,12 @@
 下载稳定版本：
 <https://github.com/yaoguai-xh/codex-safe-check/releases/tag/v1.0.1>
 
+直接下载 ZIP：
+<https://github.com/yaoguai-xh/codex-safe-check/releases/download/v1.0.1/codex-diagnostic-customer-kit-v1.0.1.zip>
+
+SHA256SUMS：
+<https://github.com/yaoguai-xh/codex-safe-check/releases/download/v1.0.1/SHA256SUMS.txt>
+
 它只报告：
 
 - 操作系统家族与架构；
@@ -66,6 +72,12 @@ and connectivity problems.
 
 Stable release download:
 <https://github.com/yaoguai-xh/codex-safe-check/releases/tag/v1.0.1>
+
+Direct ZIP:
+<https://github.com/yaoguai-xh/codex-safe-check/releases/download/v1.0.1/codex-diagnostic-customer-kit-v1.0.1.zip>
+
+SHA256SUMS:
+<https://github.com/yaoguai-xh/codex-safe-check/releases/download/v1.0.1/SHA256SUMS.txt>
 
 It reports only the OS family and architecture, selected tool version lines,
 whether proxy/CA/Codex-home overrides are present, reachability of two official

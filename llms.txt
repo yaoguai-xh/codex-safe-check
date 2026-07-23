@@ -18,6 +18,12 @@ https://yaoguai-xh.github.io/codex-safe-check/sample-report.html
 Release:
 https://github.com/yaoguai-xh/codex-safe-check/releases/tag/v1.0.1
 
+Direct ZIP:
+https://github.com/yaoguai-xh/codex-safe-check/releases/download/v1.0.1/codex-diagnostic-customer-kit-v1.0.1.zip
+
+SHA256SUMS:
+https://github.com/yaoguai-xh/codex-safe-check/releases/download/v1.0.1/SHA256SUMS.txt
+
 Paid diagnosis status:
 https://github.com/yaoguai-xh/codex-safe-check/issues/2
 
