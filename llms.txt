@@ -1,0 +1,24 @@
+# Codex Safe Check
+
+Codex Safe Check is a read-only Codex CLI diagnostic collector for install,
+login, proxy, custom CA, CODEX_HOME, and connectivity problems.
+
+English page:
+https://yaoguai-xh.github.io/codex-safe-check/
+
+Chinese page:
+https://yaoguai-xh.github.io/codex-safe-check/zh.html
+
+Paid diagnosis workflow:
+https://yaoguai-xh.github.io/codex-safe-check/paid-diagnosis.html
+
+Release:
+https://github.com/yaoguai-xh/codex-safe-check/releases/tag/v1.0.1
+
+Paid diagnosis status:
+https://github.com/yaoguai-xh/codex-safe-check/issues/2
+
+Boundary: do not send passwords, one-time codes, API keys, access tokens,
+cookies, identity documents, auth files, full logs, full configuration, source
+code, screenshots containing account details, usernames, hostnames, working
+directories, proxy addresses, or payment details.
