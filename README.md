@@ -6,6 +6,9 @@
 
 一个面向 Codex CLI 安装与网络问题的只读环境采集器。
 
+下载稳定版本：
+<https://github.com/yaoguai-xh/codex-safe-check/releases/tag/v1.0.1>
+
 它只报告：
 
 - 操作系统家族与架构；
@@ -33,7 +36,16 @@ bash collect-diagnostics.sh
 
 脚本会在当前目录创建 `codex-safe-report.txt`。发送给任何人之前，必须先人工打开
 并删除不想分享的内容。详细步骤见 [`开始这里.md`](开始这里.md)，隐私边界见
-[`隐私与服务边界.md`](隐私与服务边界.md)。
+[`隐私与服务边界.md`](隐私与服务边界.md)。如果你想先判断问题类型，见
+[`codex-cli-troubleshooting.md`](codex-cli-troubleshooting.md)。
+
+### 适合排查的问题
+
+- `codex` 命令不存在、版本异常或多个 Codex 客户端版本不一致；
+- `codex login` 浏览器回跳失败、远程机器无法登录或需要 device auth；
+- ChatGPT 登录、API Key 登录、工作区权限或本地凭据缓存混淆；
+- 企业网络、自定义 CA、代理、网络沙箱或官方端点不可达；
+- `CODEX_HOME`、安装目录、Node.js、npm、Git、curl 等基础环境问题。
 
 ### 免费脚本与付费服务
 
@@ -45,6 +57,9 @@ bash collect-diagnostics.sh
 
 Codex Safe Check is a read-only environment collector for Codex CLI installation
 and connectivity problems.
+
+Stable release download:
+<https://github.com/yaoguai-xh/codex-safe-check/releases/tag/v1.0.1>
 
 It reports only the OS family and architecture, selected tool version lines,
 whether proxy/CA/Codex-home overrides are present, reachability of two official
@@ -69,9 +84,11 @@ Review `codex-safe-report.txt` manually before sharing it. The collector is free
 and MIT licensed. Any later paid offer is for human analysis and one follow-up,
 not for access to this script and not a guaranteed fix.
 
+For a symptom map before running the collector, see
+[`codex-cli-troubleshooting.md`](codex-cli-troubleshooting.md).
+
 ## Security
 
 Do not submit secrets in a public issue. If the collector ever emits a secret or
 private path, stop sharing the report and open an issue that describes the field
 type without including the value. Rotate any credential already disclosed.
-
