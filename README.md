@@ -62,6 +62,9 @@ bash collect-diagnostics.sh
 上架通知 / 购买意向公开 issue：
 https://github.com/yaoguai-xh/codex-safe-check/issues/2
 
+安全购买意向表单：
+https://github.com/yaoguai-xh/codex-safe-check/issues/new?template=paid-diagnosis-interest.yml
+
 样例诊断报告：
 https://yaoguai-xh.github.io/codex-safe-check/sample-report.html
 
@@ -104,6 +107,9 @@ not for access to this script and not a guaranteed fix.
 
 For a symptom map before running the collector, see
 [`codex-cli-troubleshooting.md`](codex-cli-troubleshooting.md).
+
+Safe paid-diagnosis interest form:
+https://github.com/yaoguai-xh/codex-safe-check/issues/new?template=paid-diagnosis-interest.yml
 
 ## Security
 

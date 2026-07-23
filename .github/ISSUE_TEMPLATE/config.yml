@@ -1,1 +1,5 @@
 blank_issues_enabled: false
+contact_links:
+  - name: Paid diagnosis status thread
+    url: https://github.com/yaoguai-xh/codex-safe-check/issues/2
+    about: Follow public paid diagnosis launch status. Do not send diagnostic reports, secrets, or private payment.
