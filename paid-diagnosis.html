@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Paid Diagnosis Flow - Codex Safe Check</title>
+    <meta name="description" content="Paid diagnosis workflow and privacy boundary for Codex Safe Check reports.">
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #111827;
+        --muted: #5b6472;
+        --line: #d9dee7;
+        --paper: #f7f8fb;
+        --panel: #ffffff;
+        --accent: #0f766e;
+        --accent-2: #b45309;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: var(--paper);
+        line-height: 1.6;
+      }
+
+      a {
+        color: var(--accent);
+      }
+
+      .wrap {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 34px 22px;
+      }
+
+      header {
+        border-bottom: 1px solid var(--line);
+        background: var(--panel);
+      }
+
+      h1 {
+        margin: 16px 0 12px;
+        font-size: clamp(34px, 6vw, 62px);
+        line-height: 1;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin: 32px 0 12px;
+        font-size: 26px;
+      }
+
+      p {
+        margin: 0 0 14px;
+      }
+
+      li {
+        margin-bottom: 8px;
+      }
+
+      code {
+        border-radius: 4px;
+        padding: 2px 5px;
+        background: #eef2f7;
+      }
+
+      .lead {
+        color: var(--muted);
+        font-size: 19px;
+      }
+
+      .notice {
+        border-left: 4px solid var(--accent-2);
+        padding: 12px 14px;
+        background: #fff7ed;
+      }
+
+      .box {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 18px;
+        background: var(--panel);
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+        margin-top: 8px;
+        padding: 10px 16px;
+        border: 1px solid var(--accent);
+        border-radius: 6px;
+        background: var(--accent);
+        color: #ffffff;
+        font-weight: 700;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap">
+        <a href="./">Codex Safe Check</a>
+        <h1>Paid Diagnosis Flow</h1>
+        <p class="lead">The script is free. Payment covers a manual diagnosis report based on a redacted collector output, prioritized fix steps, and one follow-up review.</p>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="notice">
+        The payment link is not live yet. Do not send diagnostic reports through
+        public GitHub issues. Public issues are only for safe documentation or
+        collector feedback.
+      </section>
+
+      <section>
+        <h2>What the paid report includes</h2>
+        <ul>
+          <li>A written diagnosis of the likely failure layer: install, PATH, CLI version, login, account boundary, proxy, custom CA, network reachability, or local state.</li>
+          <li>Fix steps ordered by risk and likelihood, with expected result and stop condition for each step.</li>
+          <li>One follow-up review after you run the requested checks.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>What to send after payment</h2>
+        <div class="box">
+          <ul>
+            <li>Your main symptom in one sentence.</li>
+            <li>The full text of <code>codex-safe-report.txt</code> after manual privacy review.</li>
+            <li>One redacted error line if it is necessary to understand the failure.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Do not send</h2>
+        <p>Do not send passwords, one-time codes, API keys, access tokens, cookies, identity documents, <code>auth.json</code>, full logs, full configuration files, source code, screenshots containing account details, usernames, hostnames, working directories, or proxy addresses.</p>
+      </section>
+
+      <section>
+        <h2>中文说明</h2>
+        <p>采集器永久免费。付费内容是一份基于脱敏报告的人工诊断、按顺序执行的修复步骤和一次补充判断。</p>
+        <p>支付链接尚未上线。上线前请不要通过 GitHub issue 发送诊断报告；GitHub issue 只用于安全的文档反馈或采集器边界反馈。</p>
+        <p>正式购买后，只发送：一句话症状、人工检查后的 <code>codex-safe-report.txt</code> 文本、必要的一行脱敏错误。不要发送密码、验证码、API Key、访问令牌、认证文件、完整日志、源码、完整配置或包含账号信息的截图。</p>
+      </section>
+
+      <a class="button" href="https://github.com/yaoguai-xh/codex-safe-check/releases/tag/v1.0.1">Download collector</a>
+    </main>
+  </body>
+</html>
