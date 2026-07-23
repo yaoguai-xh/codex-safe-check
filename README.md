@@ -56,6 +56,9 @@ bash collect-diagnostics.sh
 上架通知 / 购买意向公开 issue：
 https://github.com/yaoguai-xh/codex-safe-check/issues/2
 
+样例诊断报告：
+https://yaoguai-xh.github.io/codex-safe-check/sample-report.html
+
 ## English
 
 Codex Safe Check is a read-only environment collector for Codex CLI installation

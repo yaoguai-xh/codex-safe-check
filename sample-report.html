@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Codex 环境诊断样例报告</title>
+    <meta name="description" content="Codex Safe Check 付费诊断样例报告：展示脱敏证据、可能原因、修复顺序、验证标准和隐私边界。">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://yaoguai-xh.github.io/codex-safe-check/sample-report.html">
+    <link rel="sitemap" type="application/xml" href="https://yaoguai-xh.github.io/codex-safe-check/sitemap.xml">
+    <meta property="og:title" content="Codex 环境诊断样例报告">
+    <meta property="og:description" content="查看 Codex Safe Check 付费诊断报告的交付格式和隐私边界。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://yaoguai-xh.github.io/codex-safe-check/sample-report.html">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Codex 环境诊断样例报告",
+        "description": "Codex Safe Check 付费诊断样例报告：展示脱敏证据、可能原因、修复顺序、验证标准和隐私边界。",
+        "url": "https://yaoguai-xh.github.io/codex-safe-check/sample-report.html",
+        "datePublished": "2026-07-23",
+        "dateModified": "2026-07-23"
+      }
+    </script>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #111827;
+        --muted: #5b6472;
+        --line: #d9dee7;
+        --paper: #ffffff;
+        --bg: #f5f7f8;
+        --teal: #0f766e;
+        --amber: #b45309;
+        --code: #1f2937;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+        line-height: 1.7;
+      }
+
+      main, footer {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 36px 22px;
+      }
+
+      article {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: var(--paper);
+        padding: 28px;
+      }
+
+      h1 {
+        margin: 0 0 18px;
+        font-size: clamp(34px, 6vw, 58px);
+        line-height: 1.05;
+      }
+
+      h2 {
+        margin: 30px 0 12px;
+      }
+
+      h3 {
+        margin: 20px 0 8px;
+      }
+
+      p, li, td {
+        color: var(--muted);
+      }
+
+      a {
+        color: var(--teal);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 12px 0;
+      }
+
+      th, td {
+        border: 1px solid var(--line);
+        padding: 10px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        color: var(--ink);
+        background: #f8fafc;
+      }
+
+      code, pre {
+        border-radius: 5px;
+        background: #eef2f7;
+        color: var(--code);
+      }
+
+      code {
+        padding: 2px 5px;
+      }
+
+      pre {
+        overflow-x: auto;
+        padding: 12px;
+      }
+
+      .eyebrow {
+        margin: 0 0 10px;
+        color: var(--amber);
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      .notice {
+        border-left: 4px solid var(--amber);
+        padding: 12px 14px;
+        background: #fff7ed;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <article>
+        <p class="eyebrow">样例交付，不含真实客户数据</p>
+        <h1>Codex 环境诊断样例报告</h1>
+        <p>这是一份模拟报告，用于说明付费诊断的交付格式。真实交付会基于客户人工检查后的脱敏 <code>codex-safe-report.txt</code> 和一句话症状编写。</p>
+
+        <section class="notice">
+          样例中的系统、版本、路径、网络状态和错误文本均为演示数据。正式服务也不会要求密码、验证码、API Key、访问令牌、认证文件、完整日志、源码、用户名、主机名、工作目录或代理地址。
+        </section>
+
+        <h2>订单与目标</h2>
+        <table>
+          <tr><th>字段</th><th>样例值</th></tr>
+          <tr><td>订单编号</td><td><code>sample-codex-001</code></td></tr>
+          <tr><td>报告日期</td><td>2026-07-23</td></tr>
+          <tr><td>目标结果</td><td>让当前终端能够启动 Codex CLI，并完成客户本人操作的登录流程。</td></tr>
+          <tr><td>当前结论</td><td>可直接处理。优先怀疑 PATH 指向旧全局 npm 目录，其次检查代理/证书环境。</td></tr>
+        </table>
+
+        <h2>一、症状摘要</h2>
+        <p>客户描述：安装后新开终端仍提示 <code>codex: command not found</code>。在另一个终端中偶尔能看到旧版本，但登录流程无法打开浏览器。</p>
+
+        <h2>二、已确认的脱敏证据</h2>
+        <table>
+          <tr><th>检查项</th><th>结果</th><th>说明</th></tr>
+          <tr><td>系统与架构</td><td>macOS / arm64</td><td>只保留系统家族和架构，不记录用户名或主机名。</td></tr>
+          <tr><td>Codex CLI</td><td>当前 shell 未找到；另一个 shell 显示旧版本</td><td>更像 PATH 或多 Node 环境问题。</td></tr>
+          <tr><td>Node/npm</td><td>Node 存在；npm 全局目录存在</td><td>需要确认当前 shell 是否包含 npm 全局 bin。</td></tr>
+          <tr><td>Git/curl</td><td>均存在</td><td>基础工具链不是主要嫌疑。</td></tr>
+          <tr><td>网络可达性</td><td>安装地址可达；API 主机 HTTPS 检查失败</td><td>安装和登录可能是两个问题。</td></tr>
+          <tr><td>代理/证书</td><td>检测到代理变量和自定义 CA 变量存在</td><td>只记录“存在”，不记录变量值。</td></tr>
+        </table>
+
+        <h2>三、最可能原因</h2>
+        <ol>
+          <li><strong>PATH 没有指向当前 npm 全局 bin。</strong> 证据：一个 shell 找不到 <code>codex</code>，另一个 shell 能看到旧版本，说明终端初始化文件或 Node 管理器存在分歧。置信度：高。</li>
+          <li><strong>旧版本 Codex 或旧 npm 全局目录残留。</strong> 证据：不同终端返回不一致。置信度：中。</li>
+          <li><strong>代理/自定义 CA 影响登录或 HTTPS 连接。</strong> 证据：代理和 CA 变量存在，API 主机 HTTPS 检查失败。置信度：中。</li>
+        </ol>
+
+        <h2>四、按顺序操作</h2>
+        <p>每次只改变一个因素。完成一步后先验证，避免同时改 PATH、代理和证书导致无法回溯。</p>
+
+        <h3>步骤 1：确认当前 shell 看到的命令位置</h3>
+        <pre><code>command -v codex
+npm bin -g</code></pre>
+        <ul>
+          <li>用途：判断 <code>codex</code> 是否在当前 shell 的 PATH 中。</li>
+          <li>预期结果：两个输出中至少能看到 npm 全局 bin 与 Codex 可执行文件关联。</li>
+          <li>如果失败：只反馈“command -v 是否为空”和“npm bin -g 是否有输出”，不要发送完整路径。</li>
+        </ul>
+
+        <h3>步骤 2：统一当前 shell 的 Node/npm 来源</h3>
+        <p>如果你使用 nvm、fnm、asdf、Homebrew 或系统 Node，只保留当前终端实际使用的一套。不要同时改多个 shell 配置文件。</p>
+        <ul>
+          <li>用途：避免一个终端安装，另一个终端运行旧版本。</li>
+          <li>预期结果：新开终端后 <code>node --version</code>、<code>npm --version</code> 和 <code>codex --version</code> 来源一致。</li>
+          <li>停止条件：如果新开终端仍不一致，先不要处理代理，继续回到 PATH。</li>
+        </ul>
+
+        <h3>步骤 3：在客户本人设备上重新触发登录</h3>
+        <pre><code>codex login</code></pre>
+        <ul>
+          <li>用途：验证命令可执行后，确认登录流程是否能启动。</li>
+          <li>预期结果：浏览器登录由客户本人完成，CLI 回到可用状态。</li>
+          <li>如果失败：只反馈一行脱敏错误摘要，不发送认证文件或完整登录输出。</li>
+        </ul>
+
+        <h3>步骤 4：如果仍是 HTTPS/证书错误，再处理代理或 CA</h3>
+        <ul>
+          <li>用途：只在 PATH 和登录入口确认后，才处理网络层。</li>
+          <li>预期结果：客户确认代理软件、公司网络或自定义 CA 是否是预期配置。</li>
+          <li>停止条件：涉及公司设备、TLS 拦截或根证书时，交给管理员确认，不建议关闭证书校验。</li>
+        </ul>
+
+        <h2>五、验证标准</h2>
+        <ul>
+          <li><code>codex --version</code> 在新终端中稳定返回同一版本。</li>
+          <li>客户本人完成登录流程，不向任何人发送凭据或认证文件。</li>
+          <li>如果网络仍失败，错误已被归类为代理/证书/端点可达性，而不是安装问题。</li>
+        </ul>
+
+        <h2>六、仍需补充的信息</h2>
+        <ol>
+          <li>新开终端后 <code>command -v codex</code> 是否为空。</li>
+          <li><code>codex --version</code> 是否稳定返回同一版本。</li>
+          <li>登录失败时的一行脱敏错误摘要。</li>
+        </ol>
+
+        <h2>七、边界说明</h2>
+        <p>本报告针对收到的脱敏环境证据提供排错建议，不保证第三方服务、账号资格、组织策略或特定网络环境一定恢复。涉及登录、付款、账号和组织权限的操作，必须由客户本人完成。</p>
+
+        <p><a href="paid-diagnosis.html">查看诊断服务流程</a> · <a href="https://github.com/yaoguai-xh/codex-safe-check/issues/2">关注付费诊断状态</a> · <a href="zh.html">返回中文说明</a></p>
+      </article>
+    </main>
+    <footer>
+      <p>Codex Safe Check 是独立开源工具，不是 OpenAI 官方产品。</p>
+    </footer>
+  </body>
+</html>

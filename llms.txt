@@ -12,6 +12,9 @@ https://yaoguai-xh.github.io/codex-safe-check/zh.html
 Paid diagnosis workflow:
 https://yaoguai-xh.github.io/codex-safe-check/paid-diagnosis.html
 
+Sample diagnosis report:
+https://yaoguai-xh.github.io/codex-safe-check/sample-report.html
+
 Release:
 https://github.com/yaoguai-xh/codex-safe-check/releases/tag/v1.0.1
 
